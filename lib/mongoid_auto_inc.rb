@@ -1,3 +1,5 @@
+require "incrementor"
+
 module MongoidAutoInc
   extend ActiveSupport::Concern
 
@@ -5,8 +7,8 @@ module MongoidAutoInc
     def auto_increment(name, options={})
       field name
       
-      class_eval { before_create { self.send("#{name}=", 
-                                    MongoidAutoInc::Incrementor[self.class.name].inc) } 
+      class_eval { 
+        before_create { self.send("#{name}=", MongoidAutoInc::Incrementor[self.class.name].inc) } 
       }
     end
   end
