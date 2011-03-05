@@ -26,7 +26,8 @@ module MongoidAutoInc
         collection.find_one(query)["number"]
       end
       
-      def inc
+      def inc(options={})
+        
         update_number_with("$inc" => { "number" => 1 })
       end
       
