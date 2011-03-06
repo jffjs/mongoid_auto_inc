@@ -16,6 +16,7 @@ Example:
     auto_increment :sequence
   end
 <tt>auto_increment :sequence</tt> will create a field of type <tt>Integer</tt> named <tt>sequence</tt> for <tt>Book</tt>.  Whenever an instance of the model is created (intially saved to mongoDB), the <tt>auto_increment</tt> field will automatically be set to the next number in the sequence.
+
 You can add more than one auto-incremented field per model.
 === Options
   auto_increment :sequence, :collection => :some_collection
