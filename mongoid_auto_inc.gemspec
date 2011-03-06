@@ -28,11 +28,11 @@ Gem::Specification.new do |s|
     else
       s.add_dependency %q<rspec>, ['~> 2.0.0.beta.22']
       s.add_dependency %q<mongoid>, ['>= 2.0.0.rc.6']
-      s.add_dependency %q<activesupport>, ['>=3.0.0']
+      s.add_dependency %q<activesupport>, ['>= 3.0.0']
     end
   else
     s.add_dependency %q<rspec>, ['~> 2.0.0.beta.22']
     s.add_dependency %q<mongoid>, ['>= 2.0.0.rc.6']
-    s.add_dependency %q<activesupport>, ['>=3.0.0']
+    s.add_dependency %q<activesupport>, ['>= 3.0.0']
   end
 end
