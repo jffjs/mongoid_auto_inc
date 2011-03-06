@@ -5,12 +5,13 @@ module MongoidAutoInc
 
   module ClassMethods
     def auto_increment(name, options={})
-      field name
+      field name, :type => Integer
       
-      incrementor = MongoidAutoInc::Incrementor.new
-      class_eval { 
-        before_create { self.send("#{name}=", MongoidAutoInc::Incrementor[self.class.name].inc) } 
-      }
+      seq_name = "#{self.name.downcase}_#{name}"
+      @@incrementor = MongoidAutoInc::Incrementor.new(options) 
+      @@incrementor[seq_name].set(options[:seed]) if options[:seed].is_a? Integer
+
+      before_create { self.send("#{name}=", @@incrementor[seq_name].inc) } 
     end
   end
 end
