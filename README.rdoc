@@ -3,7 +3,6 @@ Add SQL like auto-incrementing fields to your Mongoid documents.
 
 This gem is inspired by http://ihswebdesign.com/blog/autoincrement-in-mongodb-with-ruby/ and the mongomapper_id2[https://github.com/phstc/mongomapper_id2] gem.
 == Install
-Note: this is not yet released to RubyGems.org.
   gem install mongoid_auto_inc
 == Usage
 Just add <tt>auto_increment :field</tt> to your Mongoid model where <tt>:field</tt> is the name of the auto-incremented field you want to create.
