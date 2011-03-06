@@ -15,10 +15,11 @@ Example:
 
     auto_increment :sequence
   end
-<tt>auto_increment :sequence</tt> will create a field of type <tt>Integer</tt> named <tt>sequence</tt> for <tt>Book</tt>.  Whenever an instance of the model is created (saved to mongoDB), the <tt>auto_increment</tt> field will automatically be set to the next number in the sequence.
+<tt>auto_increment :sequence</tt> will create a field of type <tt>Integer</tt> named <tt>sequence</tt> for <tt>Book</tt>.  Whenever an instance of the model is created (intially saved to mongoDB), the <tt>auto_increment</tt> field will automatically be set to the next number in the sequence.
+You can add more than one auto-incremented field per model.
 === Options
   auto_increment :sequence, :collection => :some_collection
-<tt>mongoid_auto_inc</tt> keeps track of the current number in the sequence by creating a separate document to query and update.  By default <tt>auto_increment</tt> will save this document to a mongoDB collection called <tt>sequences</tt>.  If you wish to save to a different collection use the <tt>:collection</tt> option to specify its name.
+<tt>mongoid_auto_inc</tt> keeps track of the current number in the sequence by creating a separate document mongoDB to query and update.  By default <tt>auto_increment</tt> will save this document to a mongoDB collection called <tt>sequences</tt>.  If you wish to save to a different collection use the <tt>:collection</tt> option to specify its name.
 
   auto_increment :sequence, :seed => 3333
 Use the <tt>:seed</tt> option to set the initial value of the auto-incremented field.  The first number assigned from the sequence will be the next number after the seed value.
