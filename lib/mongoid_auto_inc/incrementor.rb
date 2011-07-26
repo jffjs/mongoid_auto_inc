@@ -3,10 +3,10 @@
 module MongoidAutoInc
   class Incrementor
     class Sequence
-      def initialize(sequence, collection_name)
+      def initialize(sequence, collection_name, seed)
         @sequence = sequence.to_s
         @collection = collection_name.to_s
-        exists? || create
+        exists? || create(seed)
       end
 
       def inc
@@ -49,16 +49,18 @@ module MongoidAutoInc
       end
     end
     
-    def initialize(options={})
+    def initialize(options=nil)
+      options ||= {}
       @collection = options[:collection] || "sequences"
+      @seed = options[:seed].to_i
     end
 
     def [](sequence)
-      Sequence.new(sequence, @collection)
+      Sequence.new(sequence, @collection, @seed)
     end
 
     def []=(sequence, number)
-      Sequence.new(sequence, @collection).set(number)
+      Sequence.new(sequence, @collection, @seed).set(number)
     end
   end
 end
