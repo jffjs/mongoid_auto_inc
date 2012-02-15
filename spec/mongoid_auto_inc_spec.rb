@@ -34,6 +34,11 @@ describe MongoidAutoInc do
       DocumentA.create!
       DocumentA.create!.seq.should == 2
     end
+    
+    it "should not auto increment when value is provided" do
+      doc = DocumentA.create!(seq: 33)
+      doc.seq.should == 33
+    end
   end
 
   describe "auto increment with :collection option" do
