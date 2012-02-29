@@ -70,6 +70,10 @@ describe MongoidAutoInc do
         include Mongoid::Document
         auto_increment :seq, :seed => 10
       end
+      class DocumentD
+        include Mongoid::Document
+        auto_increment :seq
+      end
     end
 
     before(:each) do
@@ -80,6 +84,8 @@ describe MongoidAutoInc do
       DocumentC.create!.seq.should == 11
       DocumentC.create!.seq.should == 12
       DocumentC.create!.seq.should == 13
+      DocumentD.create!.seq.should == 1
+      DocumentD.create!.seq.should == 2
     end
   end
 end
