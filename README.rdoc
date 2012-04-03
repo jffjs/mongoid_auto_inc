@@ -32,4 +32,4 @@ Use the <tt>:seed</tt> option to set the initial value of the auto-incremented f
 Thanks to these folk for their help:
 * davemitchell[https://github.com/davemitchell]
 * meltedice[https://github.com/meltedice]
-* fedgl[https://github.com/fedegl]
+* fedegl[https://github.com/fedegl]
