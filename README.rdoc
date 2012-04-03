@@ -5,7 +5,7 @@ This gem is inspired by http://ihswebdesign.com/blog/autoincrement-in-mongodb-wi
 == Install
 In your Gemfile:
   gem 'mongoid_auto_inc'
-Followed by running `bundle install`, or do:
+Followed by running <tt>bundle install</tt>, or do:
   gem install mongoid_auto_inc
 == Usage
 Just add <tt>auto_increment :field</tt> to your Mongoid model where <tt>:field</tt> is the name of the auto-incremented field you want to create.
