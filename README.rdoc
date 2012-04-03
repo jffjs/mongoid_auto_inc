@@ -27,3 +27,9 @@ You can add more than one auto-incremented field per model.
 
   auto_increment :sequence, :seed => 3333
 Use the <tt>:seed</tt> option to set the initial value of the auto-incremented field.  The first number assigned from the sequence will be the next number after the seed value.
+
+== Contributors 
+Thanks to these folk for their help:
+  * davemitchell[https://github.com/davemitchell]
+  * meltedice[https://github.com/meltedice]
+  * fedgl[https://github.com/fedegl]
