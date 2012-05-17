@@ -8,7 +8,7 @@ Gem::Specification.new do |s|
   s.platform    = Gem::Platform::RUBY
   s.authors     = ["Jeff Smith"]
   s.email       = ["jffreyjs@gmail.com"]
-  s.homepage    = ""
+  s.homepage    = "https://github.com/jffjs/mongoid_auto_inc"
   s.summary     = %q{Adds auto increment capabilities to Mongoid::Document}
   s.description = %q{Adds auto increment capabilities to Mongoid::Document}
 
@@ -18,21 +18,8 @@ Gem::Specification.new do |s|
   s.test_files    = `git ls-files -- {test,spec,features}/*`.split("\n")
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ["lib"]
-  if s.respond_to? :specification_version then
-    s.specification_version = 3
 
-    if Gem::Version.new(Gem::VERSION) >= Gem::Version.new('1.2.0') then
-      s.add_development_dependency %q<rspec>, ['~> 2.0.0.beta.22']
-      s.add_dependency %q<mongoid>, ['>= 2.0.0.rc.6']
-      s.add_dependency %q<activesupport>, ['>=3.0.0']
-    else
-      s.add_dependency %q<rspec>, ['~> 2.0.0.beta.22']
-      s.add_dependency %q<mongoid>, ['>= 2.0.0.rc.6']
-      s.add_dependency %q<activesupport>, ['>= 3.0.0']
-    end
-  else
-    s.add_dependency %q<rspec>, ['~> 2.0.0.beta.22']
-    s.add_dependency %q<mongoid>, ['>= 2.0.0.rc.6']
-    s.add_dependency %q<activesupport>, ['>= 3.0.0']
-  end
+  s.required_ruby_version = '>= 1.8.6'
+  s.required_rubygems_version = '>= 1.3.5'
+  s.add_bundler_dependencies
 end

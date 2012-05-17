@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
 # rspec spec/mongoid_auto_inc_spec.rb
-require 'rspec'
-require 'active_support'
-require 'mongoid'
+require 'bundler/setup'
+Bundler.require(:default, :development)
 require 'mongoid_auto_inc'
 
 describe MongoidAutoInc do

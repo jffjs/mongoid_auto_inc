@@ -1,3 +1,4 @@
+require "mongoid"
 require "mongoid_auto_inc/incrementor"
 
 module MongoidAutoInc

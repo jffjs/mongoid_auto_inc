@@ -16,7 +16,7 @@ module MongoidAutoInc
       def set(number)
         update_number_with("$set" => { "number" => number })
       end
-    
+
       private
 
       def exists?
@@ -34,11 +34,11 @@ module MongoidAutoInc
           Mongoid.default_session[@collection]
         end
       end
-      
+
       def query
         { "seq_name" => @sequence }
       end
-        
+
       def current
         if ::Mongoid::VERSION < '3'
           collection.find_one(query)["number"]
@@ -46,7 +46,7 @@ module MongoidAutoInc
           collection.find(query).one['number']
         end
       end
-      
+
       def update_number_with(mongo_func)
         opts = {
           "query"  => query,
@@ -62,7 +62,7 @@ module MongoidAutoInc
         end
       end
     end
-    
+
     def initialize(options=nil)
       options ||= {}
       @collection = options[:collection] || "sequences"
