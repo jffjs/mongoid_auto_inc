@@ -1,0 +1,6 @@
+= Changelog
+
+Per release changes to mongoid_auto_inc
+
+== 0.1.0 (2012 March 21)
+* Initial stable release.
